@@ -1,3 +1,99 @@
-:root{
---cinza:gay 
-}
+:root {
+    --cinza: #0097A7;
+    --vermelha: #FF5C77;
+    --vermelha-escura: #af303f;
+    --branca: #fff;
+    --luz: rgb(229, 255, 0);
+    /*da nomes as cores que usaremos na página*/
+  }
+  
+  body {
+    display: flex;/*da acesso as propriedades de alinhamento da pagina*/
+    align-items: center;/*alinha os elementos verticalmente ao centro*/
+    background: linear-gradient(45deg, #a7cfdf 0%,#23538a 100%); 
+    /*preenche o fundo com um gradiente com inclinação de 45° e as cores descritas*/
+    
+    justify-content: center;
+    /*alinha os elementos horizontamente ao centro*/
+    flex-direction: column;
+    /*dipõe os elementos em colunas*/
+    font-family: 'Montserrat', sans-serif;
+    /*muda a letra padrão do navegador*/
+    min-height: 100vh;
+    /*liita a altura do body ao mínino de 100% da altura da tela do dispositivo*/
+  }
+  img {
+    width: 94px;
+    height: 94px;
+  }
+  h1 {
+    color: var(--branca);
+    margin-bottom: 20px;/*adiciona uma margim na parte inferior de 20px*/
+    font-size: 2rem;/*define o tamanho da letra ao dobro do padrão do navegador */
+  }
+  
+  .teclado {
+    background: linear-gradient(to bottom, #eeeeee 0%,#cccccc 100%);
+    /*preenche o fundo com um gradiente na parte de baixo e as cores descritas*/
+    box-shadow: 6px 8px 0 6px #666, 10px 10px 10px #000;
+    /*adiona sombra aos elementos*/
+    border-radius: 30px;
+    /*arredonda as bordas*/
+    display: grid;
+    /*organiza os elementos em grid "tabela"*/
+    gap: 10px;
+    /*deixa o espaço entre as teclas de 10 px*/
+    grid-template-columns: repeat(3, 1fr);
+    /*organiza o formato da Grid 3 colunas com mesma proporção*/
+    padding: 10px;
+    /*adicoona um espaçamento externo*/
+  }
+  
+  .tecla {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 30px;
+    /*arredonda a borda da tecla*/
+    box-shadow: 3px 3px 0 var(--cinza);
+    /*sobra da tecla*/
+    color: var(--vermelha);
+    /*cor da letra da tecla*/
+    cursor: pointer;
+    /*tipo do cursor do mouse*/
+    height: 120px;
+    /*altura da tecla*/
+    font-size: 1.75em;
+    /*tamanho da letra*/
+    font-weight: bold;
+    /*aletra em negrito*/
+    line-height: 120px;
+
+    text-align: center;
+    /*centraliza o texto*/
+    width: 120px;
+    /*comprimento da tecla*/
+  }
+  
+  .tecla.ativa,
+  .tecla:active {
+    background-color: var(--vermelha);
+    /*cor de fundo da tecla quando clicada*/
+    border: 4px solid  var(--vermelha);
+    box-shadow: 3px 3px 0 var(--vermelha-escura) inset;
+    color: var(--branca);
+    outline: none;
+  }
+  
+  .tecla.focus,
+  .tecla:focus {
+    outline: none;
+    box-shadow: 1px 1px 10px var(--luz);
+  }
+  
+  .tecla.active:focus,
+  .tecla:active:focus {
+    box-shadow: 3px 3px 0 var(--vermelha-escura) inset, 1px 1px 10px var(--luz);
+  }
+  
